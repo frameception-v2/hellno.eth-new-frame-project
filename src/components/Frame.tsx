@@ -17,19 +17,50 @@ import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
 import { PROJECT_TITLE } from "~/lib/constants";
 
-function ExampleCard() {
+function FartButton() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const fartRef = useRef<any>(null);
+
+  useEffect(() => {
+    // Initialize fart.js
+    if (typeof window !== 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/fart.js';
+      script.async = true;
+      script.onload = () => {
+        fartRef.current = new (window as any).Fart({
+          volume: 100
+        });
+      };
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  const playRandomFart = useCallback(() => {
+    if (fartRef.current && !isPlaying) {
+      setIsPlaying(true);
+      const randomSound = FART_SOUNDS[Math.floor(Math.random() * FART_SOUNDS.length)];
+      fartRef.current.play(randomSound);
+      setTimeout(() => setIsPlaying(false), 1000);
+    }
+  }, [isPlaying]);
+
   return (
     <Card className="border-neutral-200 bg-white">
       <CardHeader>
-        <CardTitle className="text-neutral-900">Welcome to the Frame Template</CardTitle>
-        <CardDescription className="text-neutral-600">
-          This is an example card that you can customize or remove
+        <CardTitle className="text-neutral-900 text-center">🎵 Fart Frame 💨</CardTitle>
+        <CardDescription className="text-neutral-600 text-center">
+          Click the button to play a random fart sound!
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-neutral-800">
-        <p>
-          Your frame content goes here. The text is intentionally dark to ensure good readability.
-        </p>
+      <CardContent className="text-center">
+        <PurpleButton 
+          onClick={playRandomFart}
+          disabled={isPlaying}
+          className="w-32 h-32 rounded-full text-xl"
+        >
+          {isPlaying ? '💨' : '👆'}
+        </PurpleButton>
       </CardContent>
     </Card>
   );
@@ -137,7 +168,7 @@ export default function Frame(
     >
       <div className="w-[300px] mx-auto py-2 px-2">
         <h1 className="text-2xl font-bold text-center mb-4 text-neutral-900">{title}</h1>
-        <ExampleCard />
+        <FartButton />
       </div>
     </div>
   );

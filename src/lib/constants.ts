@@ -1,3 +1,4 @@
-export const PROJECT_ID = 'new-frame-project';
-export const PROJECT_TITLE = "new-frame-project";
-export const PROJECT_DESCRIPTION = "A modern Farcaster Frame for seamless web3 interactions";
+export const PROJECT_ID = 'farcaster-fart-frame';
+export const PROJECT_TITLE = "Farcaster Fart Frame";
+export const PROJECT_DESCRIPTION = "A hilarious Farcaster Frame that plays random fart sounds";
+export const FART_SOUNDS = ['toot', 'ripper', 'plop', 'squit', 'raspberry', 'squat', 'tuppence', 'liftoff', 'trumpet', 'fizzler', 'windy', 'eine', 'fartception', 'fartpoint1'];

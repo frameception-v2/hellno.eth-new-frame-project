@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
 import sdk, {
   AddFrame,
   SignIn as SignInCore,
@@ -15,7 +15,7 @@ import { base, optimism } from "wagmi/chains";
 import { useSession } from "next-auth/react";
 import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
-import { PROJECT_TITLE } from "~/lib/constants";
+import { PROJECT_TITLE, FART_SOUNDS } from "~/lib/constants";
 
 function FartButton() {
   const [isPlaying, setIsPlaying] = useState(false);

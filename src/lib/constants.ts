@@ -1,3 +1,3 @@
-export const PROJECT_ID = 'farcaster-frames-template';
-export const PROJECT_TITLE = "Farcaster Frames Template";
-export const PROJECT_DESCRIPTION = "A Farcaster Frames v2 Template by hellno";
+export const PROJECT_ID = 'new-frame-project';
+export const PROJECT_TITLE = "new-frame-project";
+export const PROJECT_DESCRIPTION = "A modern Farcaster Frame for seamless web3 interactions";

@@ -5,11 +5,13 @@ export async function GET() {
 
   const config = {
     accountAssociation: {
-      header:
-        "eyJmaWQiOjM2MjEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgyY2Q4NWEwOTMyNjFmNTkyNzA4MDRBNkVBNjk3Q2VBNENlQkVjYWZFIn0",
-      payload: "eyJkb21haW4iOiJmcmFtZXMtdjIudmVyY2VsLmFwcCJ9",
-      signature:
-        "MHhiNDIwMzQ1MGZkNzgzYTExZjRiOTllZTFlYjA3NmMwOTdjM2JkOTY1NGM2ODZjYjkyZTAyMzk2Y2Q0YjU2MWY1MjY5NjI5ZGQ5NTliYjU0YzEwOGI4OGVmNjdjMTVlZTdjZDc2YTRiMGU5NzkzNzA3YzkxYzFkOWFjNTg0YmQzNjFi",
+      message: {
+        domain: "new-frame-project.vercel.app",
+        timestamp: 1738164580,
+        expirationTime: 1745940580
+      },
+      signature: "264ad5ddaa6950378fe9e78176caa60e7a58fc8669fb7fae50b83938360ecb4f1d242df7421820e0365f6dc3c50ff626fa850538fd77a4add6a18e372e4993ba1b",
+      signingKey: "f933ee68058bd72bc73c5e4429895e6a4a8fbcc6cee8340528bebdfa2dd499e6"
     },
     frame: {
       version: "1",
